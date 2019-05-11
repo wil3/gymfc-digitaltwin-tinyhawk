@@ -1,0 +1,116 @@
+
+{
+    "frame" : {
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Frame.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/Frame.dae",
+            "mass": 0.00612,
+            "pose": "0 0 0 1.5708 -0 1.5708"
+    },
+    "fc" : {
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Flight Controller.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/flight_controller.dae",
+            "mass": 0.00611,
+            "pose": "0 0 -1e-06 1.5708 -1.4e-05 1.5708"
+    },
+    "battery": {
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Battery.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/battery.dae",
+            "mass": 0.01253,
+            "pose": "-0 0 -0.00157 1.5708 -0.00081 1.5708"
+    },
+    "batteryHolder": {
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Battery Holder.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/battery_holder.dae",
+            "mass": 0.00076,
+            "pose": "-0 0 -0.00157 1.5708 -0.00081 1.5708"
+    },
+    "camera": {
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Camera.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/camera.dae",
+            "mass": 0.002,
+            "pose": "-0 0 -0.00157 1.5708 -0.00081 1.5708"
+    },
+    "motors": [
+        {
+            "id":"lr_motor",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Motor.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/motor.dae",
+            "mass": 0.00253,
+            "pose": "0 0 -1e-06 1.5708 -1.4e-05 1.5708"
+        },
+        {
+            "id":"rr_motor",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Motor.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/motor.dae",
+            "mass": 0.00253,
+            "pose": "0 0 -1e-06 1.5708 -1.4e-05 1.5708"
+        },
+        {
+            "id":"lf_motor",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Motor.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/motor.dae",
+            "mass": 0.00253,
+            "pose": "0 0 -1e-06 1.5708 -1.4e-05 1.5708"
+        },
+        {
+            "id":"rf_motor",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Motor.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/motor.dae",
+            "mass": 0.00253,
+            "pose": "0 0 -1e-06 1.5708 -1.4e-05 1.5708"
+        }
+    ],
+
+    "props": [
+        {
+            "id":"lr_prop",
+            "parent":"lr_motor",
+            "direction":"ccw",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Prop.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/prop.dae",
+            "mass": 0.00062,
+            "pose": "-0 0 -0.00157 1.5708 -0.00081 1.5708"
+        },
+        {
+            "id":"rr_prop",
+            "parent":"rr_motor",
+            "direction":"cw",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Prop.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/prop.dae",
+            "mass": 0.00062,
+            "pose": "-0 0 -0.00157 1.5708 -0.00081 1.5708"
+        },
+        {
+            "id":"lf_prop",
+            "parent":"lf_motor",
+            "direction":"cw",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Prop.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/prop.dae",
+            "mass": 0.00062,
+            "pose": "-0 0 -0.00157 1.5708 -0.00081 1.5708"
+        },
+        {
+            "id":"rf_prop",
+            "parent":"rf_motor",
+            "direction":"ccw",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Prop.stl",
+            "stl_length_scale": 0.001,
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/prop.dae",
+            "mass": 0.00062,
+            "pose": "-0 0 -0.00157 1.5708 -0.00081 1.5708"
+        }
+    ]
+
+}

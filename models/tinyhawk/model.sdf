@@ -2,6 +2,33 @@
 <sdf version='1.6'>
   <model name='tinyhawk'>
 
+    <plugin name="config" filename="libAircraftConfigPlugin.so">
+        <motorCount>4</motorCount>
+        <!-- Where is the center of thrust in relation to this specified link -->
+        <centerOfThrust> 
+            <link>frame</link>
+            <offset>0 0 -0.00157</offset>
+        </centerOfThrust>
+      <sensors>
+          <sensor type="imu">
+              <enable_angular_velocity>true</enable_angular_velocity>
+              <enable_linear_acceleration>true</enable_linear_acceleration>
+              <enable_orientation>true</enable_orientation>
+          </sensor>
+      <!--
+          <sensor type="esc">
+                <enable_angular_velocity>true</enable_angular_velocity>
+                <enable_temperature>true</enable_temperature>
+                <enable_current>true</enable_current>
+          </sensor>
+          <sensor type="battery">
+              <enable_voltage>true</enable_voltage>
+              <enable_current>true</enable_current>
+          </sensor>
+-->
+      </sensors>
+    </plugin>
+
     <!-- ==========================================================================================  -->
     <!-- MODELS -->
     <!-- ==========================================================================================  -->
@@ -9,18 +36,18 @@
     <!-- Frame -->
     <link name='frame'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00612</mass>
         <inertia>
-          <ixx>0</ixx>
+          <ixx>4.55188834e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>8.31090198e-06</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>4.08448539e-06</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.000000 0.006794 0.000178</pose>
       </inertial>
-      <pose frame=''>0 0 0 1.5708 -0 0</pose>
+      <pose frame=''>0 0 0 1.5708 -0 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -108,22 +135,22 @@
       </collision>
     </link>
 
-    <!-- Flight Controller -->
+    <!-- Flight Controller 
 
     <link name='flight_controller'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00611</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.18778367e-07</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <iyy>1.10998197e-06</iyy>
+          <iyz>1.8405908769131383e-08</iyz>
+          <izz>8.26016224e-07</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>-0.000000 -0.000284 -0.000922</pose>
       </inertial>
-      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 0</pose>
+      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -211,22 +238,24 @@
       </collision>
     </link>
 
-    <!-- Camera -->
+    -->
+
+    <!-- Camera 
 
     <link name='camera'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.002</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.50844245e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>3.26076614e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.15103487e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.000000 0.018094 0.012633</pose>
       </inertial>
-      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 -4e-06</pose>
+      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -313,23 +342,24 @@
         </surface>
       </collision>
     </link>
+    -->
 
-    <!-- Battery Holder -->
+    <!-- Battery Holder 
 
     <link name='battery_holder'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00076</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>5.65093220e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>1.72251063e-07</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>1.25863072e-07</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.000000 -0.006055 0.000000</pose>
       </inertial>
-      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 -4e-06</pose>
+      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -416,23 +446,24 @@
         </surface>
       </collision>
     </link>
+    -->
 
-    <!-- Battery -->
+    <!-- Battery 
 
     <link name='battery'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.01253</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.05314346e-07</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>4.00253823e-06</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.80699142e-06</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.000000 -0.009475 0.000000</pose>
       </inertial>
-      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 -4e-06</pose>
+      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -519,26 +550,27 @@
         </surface>
       </collision>
     </link>
+    -->
 
     <!-- PROPS -->
     <!-- Note: Locations based off of the LEFT REAR prop due to how Fusion360 exported the STL model. -->
 
-     <!-- Left Rear Prop -->
+     <!-- Left Rear Prop 
 
     <link name='lr_prop'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00062</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.43833309e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>6.32104646e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.43835784e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.022875 0.001035 -0.030250</pose>
       </inertial>
-      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 -4e-06</pose>
+      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -625,23 +657,24 @@
         </surface>
       </collision>
     </link>
+    -->
 
-     <!-- Right Rear Prop -->
+     <!-- Right Rear Prop
 
     <link name='rr_prop'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00062</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.43833309e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>6.32104646e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.43835784e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>-0.022875 0.001035 -0.030250</pose>
       </inertial>
-      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 -4e-06</pose>
+      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -728,23 +761,24 @@
         </surface>
       </collision>
     </link>
+     -->
 
-    <!-- Left Front Prop -->
+    <!-- Left Front Prop 
 
     <link name='lf_prop'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00062</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.43833309e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>6.32104646e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.43835784e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.022875 0.001035 0.030250</pose>
       </inertial>
-      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 -4e-06</pose>
+      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -831,23 +865,24 @@
         </surface>
       </collision>
     </link>
+    -->
 
-    <!-- Right Front Prop -->
+    <!-- Right Front Prop 
 
     <link name='rf_prop'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00062</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.43833309e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>6.32104646e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.43835784e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>-0.022875 0.001035 0.030250</pose>
       </inertial>
-      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 -4e-06</pose>
+      <pose frame=''>-0 0 -0.00157 1.5708 -0.00081 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -934,26 +969,27 @@
         </surface>
       </collision>
     </link>
+    -->
 
     <!-- MOTORS -->
     <!-- Note: Locations based off of the LEFT REAR motor due to how Fusion360 exported the STL model. -->
 
-    <!-- Left Rear Motor -->
+    <!-- Left Rear Motor 
 
     <link name='lr_motor'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00253</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.18707123e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>3.73341973e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.18707862e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.022875 0.004133 -0.030250</pose>
       </inertial>
-      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 0</pose>
+      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -1040,23 +1076,24 @@
         </surface>
       </collision>
     </link>
+    -->
 
-    <!-- Right Rear Motor -->
+    <!-- Right Rear Motor 
 
     <link name='rr_motor'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00253</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.18707123e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>3.73341973e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.18707862e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>-0.022875 0.004133 -0.030250</pose>
       </inertial>
-      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 0</pose>
+      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -1143,23 +1180,24 @@
         </surface>
       </collision>
     </link>
+    -->
 
-    <!-- Left Front Motor -->
+    <!-- Left Front Motor 
 
     <link name='lf_motor'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00253</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.18707123e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>3.73341973e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.18707862e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0.0605 0 -0 0</pose>
+        <pose frame=''>0.022875 0.004133 0.030250</pose>
       </inertial>
-      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 0</pose>
+      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -1246,23 +1284,24 @@
         </surface>
       </collision>
     </link>
+    -->
 
-    <!-- Right Front Motor -->
+    <!-- Right Front Motor 
 
     <link name='rf_motor'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.00253</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>3.18707123e-08</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>3.73341973e-08</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>3.18707862e-08</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>-0.022875 0.004133 0.030250</pose>
       </inertial>
-      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 0</pose>
+      <pose frame=''>0 0 -1e-06 1.5708 -1.4e-05 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -1349,12 +1388,13 @@
         </surface>
       </collision>
     </link>
+    -->
 
     <!-- ==========================================================================================  -->
     <!-- JOINTS -->
     <!-- ==========================================================================================  -->
 
-    <!-- Structural -->
+    <!-- Structural
 
     <joint name='flight_controller_joint' type='fixed'>
       <parent>frame</parent>
@@ -1427,10 +1467,11 @@
         </ode>
       </physics>
     </joint>
+     -->
 
     <!-- MOTOR-FRAME JOINTS -->
 
-    <!-- Left Rear -->
+    <!-- Left Rear 
     <joint name='lr_motor_joint' type='fixed'>
       <parent>frame</parent>
       <child>lr_motor</child>
@@ -1448,8 +1489,9 @@
         </ode>
       </physics>
     </joint>
+    -->
 
-    <!-- Right Rear -->
+    <!-- Right Rear 
     <joint name='rr_motor_joint' type='fixed'>
       <parent>frame</parent>
       <child>rr_motor</child>
@@ -1467,8 +1509,9 @@
         </ode>
       </physics>
     </joint>
+    -->
 
-    <!-- Left Front -->
+    <!-- Left Front 
     <joint name='lf_motor_joint' type='fixed'>
       <parent>frame</parent>
       <child>lf_motor</child>
@@ -1486,8 +1529,9 @@
         </ode>
       </physics>
     </joint>
+    -->
 
-    <!-- Right Front -->
+    <!-- Right Front 
     <joint name='rf_motor_joint' type='fixed'>
       <parent>frame</parent>
       <child>rf_motor</child>
@@ -1505,17 +1549,18 @@
         </ode>
       </physics>
     </joint>
+    -->
 
     <!-- MOTOR-PROP JOINTS -->
 
-    <!-- Left Rear -->
+    <!-- Left Rear 
     <joint name='lr_prop_joint' type='revolute'>
       <parent>lr_motor</parent>
       <child>lr_prop</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose frame='frame'>0.022875 0 -0.03025 0 0 0</pose>
       <axis>
-        <xyz>-0 -1 -0</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
         <limit>
           <lower>-1.79769e+308</lower>
           <upper>1.79769e+308</upper>
@@ -1541,15 +1586,31 @@
         </ode>
       </physics>
     </joint>
+    <plugin name="prop_1_motor_model" filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>lr_prop_joint</jointName>
+      <linkName>lr_prop</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.02</timeConstantDown>
+      <maxRotVelocity>4188.790204786391</maxRotVelocity>
+      <motorConstant>1.2459165562986865e-08</motorConstant>
+      <momentConstant>0.01653572931020351</momentConstant>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10000</rotorVelocitySlowdownSim>
+    </plugin>
+    -->
 
-    <!-- Right Rear -->
+    <!-- Right Rear 
     <joint name='rr_prop_joint' type='revolute'>
       <parent>rr_motor</parent>
       <child>rr_prop</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose frame='frame'>-0.022875 0 -0.03025 0 0 0</pose>
       <axis>
-        <xyz>-0 1 -0</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
+        <xyz>-0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
         <limit>
           <lower>-1.79769e+308</lower>
           <upper>1.79769e+308</upper>
@@ -1575,15 +1636,31 @@
         </ode>
       </physics>
     </joint>
+    <plugin name="prop_2_motor_model" filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rr_prop_joint</jointName>
+      <linkName>rr_prop</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.02</timeConstantDown>
+      <maxRotVelocity>4188.790204786391</maxRotVelocity>
+      <motorConstant>1.2459165562986865e-08</motorConstant>
+      <momentConstant>0.01653572931020351</momentConstant>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10000</rotorVelocitySlowdownSim>
+    </plugin>
+    -->
 
-    <!-- Left Front -->
+    <!-- Left Front 
     <joint name='lf_prop_joint' type='revolute'>
       <parent>lf_motor</parent>
       <child>lf_prop</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose frame='frame'>0.022875 0 0.03025 0 0 0</pose>
       <axis>
-        <xyz>-0 -1 -0</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
+        <xyz>-0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
         <limit>
           <lower>-1.79769e+308</lower>
           <upper>1.79769e+308</upper>
@@ -1609,15 +1686,31 @@
         </ode>
       </physics>
     </joint>
+    <plugin name="prop_3_motor_model" filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>lf_prop_joint</jointName>
+      <linkName>lf_prop</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.02</timeConstantDown>
+      <maxRotVelocity>4188.790204786391</maxRotVelocity>
+      <motorConstant>1.2459165562986865e-08</motorConstant>
+      <momentConstant>0.01653572931020351</momentConstant>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10000</rotorVelocitySlowdownSim>
+    </plugin>
+    -->
 
-    <!-- Right Front -->
+    <!-- Right Front 
     <joint name='rf_prop_joint' type='revolute'>
       <parent>rf_motor</parent>
       <child>rf_prop</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose frame='frame'>-0.022875 0 0.03025 0 0 0</pose>
       <axis>
-        <xyz>-0 -1 -0</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
+        <xyz>-0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
         <limit>
           <lower>-1.79769e+308</lower>
           <upper>1.79769e+308</upper>
@@ -1643,6 +1736,36 @@
         </ode>
       </physics>
     </joint>
+    <plugin name="prop_4_motor_model" filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rf_prop_joint</jointName>
+      <linkName>rf_prop</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.02</timeConstantDown>
+      <maxRotVelocity>4188.790204786391</maxRotVelocity>
+      <motorConstant>1.2459165562986865e-08</motorConstant>
+      <momentConstant>0.01653572931020351</momentConstant>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10000</rotorVelocitySlowdownSim>
+    </plugin>
+
+    <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>flight_controller</linkName>
+      <imuTopic>/imu</imuTopic>
+      <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
+      <gyroscopeRandomWalk>3.8785e-06</gyroscopeRandomWalk>
+      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+      <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+      <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
+      <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
+      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+    </plugin>
+    -->
 
     <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
