@@ -1,9 +1,9 @@
 
 {
     "frame" : {
-            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/Frame.stl",
+            "stl": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/stl/frame_simple.stl",
             "stl_length_scale": 0.001,
-            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/Frame.dae",
+            "mesh": "/home/jarrod/Documents/gymfc-digitaltwin-tinyhawk/models/tinyhawk/meshes/frame_simple.dae",
             "mass": 0.00612,
             "pose": "0 0 0 1.5708 -0 1.5708"
     },

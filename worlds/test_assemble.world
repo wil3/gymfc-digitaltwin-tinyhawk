@@ -5,7 +5,7 @@
 
     <gui>
       <camera name="user_camera">
-        <pose>-1 0 0 0 0.2 0</pose>
+        <pose>-0.007 0 0 0 0.2 0</pose>
       </camera>
     </gui>
     <physics type="dart">
